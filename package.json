@@ -1,0 +1,43 @@
+{
+  "name": "timesup",
+  "version": "1.0.0",
+  "description": "📆 Task and reminder management",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon index.js --ignore client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MidnightJabber/timesup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MidnightJabber/timesup/issues"
+  },
+  "homepage": "https://github.com/MidnightJabber/timesup#readme",
+  "dependencies": {
+    "apollo-client": "^2.2.5",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "connect-mongo": "^2.0.1",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
+    "express-session": "^1.15.6",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.7.3",
+    "mongoose": "^5.0.6",
+    "nodemon": "^1.15.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "webpack": "^3.11.0",
+    "webpack-dev-middleware": "^2.0.5"
+  }
+}
