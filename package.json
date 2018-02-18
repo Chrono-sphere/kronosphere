@@ -2,9 +2,10 @@
   "name": "timesup",
   "version": "1.0.0",
   "description": "📆 Task and reminder management",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js --ignore client"
+    "dev": "nodemon index.js",
+    "test": "mocha --recursive __tests__/"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,6 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "connect-mongo": "^2.0.1",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
@@ -33,11 +33,15 @@
     "nodemon": "^1.15.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "react": "^16.2.0",
-    "react-apollo": "^2.0.4",
-    "react-dom": "^16.2.0",
-    "react-router": "^4.2.0",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^2.0.5"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1",
+    "sinon": "^4.3.0",
+    "sinon-chai": "^2.14.0",
+    "webpack-node-externals": "^1.6.0"
   }
 }
