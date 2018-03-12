@@ -17,4 +17,4 @@ const TaskType = new GraphQLObjectType({
     }
 });
 
-export default TaskType;
+module.exports = TaskType;
