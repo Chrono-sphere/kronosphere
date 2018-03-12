@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "mocha --recursive __tests__/"
+    "test": "mocha --recursive __tests__/",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
