@@ -1,5 +1,6 @@
 const express = require('express');
 const expressGraphQL = require('express-graphql');
+const models = require('./models');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
