@@ -4,8 +4,8 @@
   "description": "📆 Task and reminder management",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "test": "mocha --recursive __tests__/",
+    "dev": "webpack && node build/bundle.js",
+    "test": "mocha --compilers js:babel-core/register --recursive __tests__/",
     "build": "webpack"
   },
   "repository": {

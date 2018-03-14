@@ -1,10 +1,11 @@
-const graphql = require('graphql');
+import graphql from 'graphql';
+import UserType from '../types/user';
+import AuthService from '../../services/auth';
+
 const {
     GraphQLObjectType,
     GraphQLString
 } = graphql;
-const UserType = require('../types/user');
-const AuthService = require('../../services/auth');
 
 const login = {
     type: UserType,
@@ -17,4 +18,4 @@ const login = {
     }
 };
 
-module.exports = login;
+export default login;

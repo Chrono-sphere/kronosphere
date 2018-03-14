@@ -1,11 +1,12 @@
-const express = require('express');
-const expressGraphQL = require('express-graphql');
+import express from 'express';
+import expressGraphQL from 'express-graphql';
+import mongoose from 'mongoose';
+import session from 'express-session';
+import passport from 'passport';
+import schema from './schema/schema';
+
 const models = require('./models');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const passport = require('passport');
 const MongoStore = require('connect-mongo')(session);
-const schema = require('./schema/schema');
 
 require('dotenv').config();
 
@@ -36,9 +37,4 @@ app.use('/graphql', expressGraphQL({
     graphiql: true
 }));
 
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpack = require('webpack');
-const webpackConfig = require('../webpack.config.js');
-app.use(webpackMiddleware(webpack(webpackConfig)));
-
-module.exports = app;
+export default app;

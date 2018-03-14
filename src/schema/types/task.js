@@ -1,10 +1,10 @@
-const graphql = require('graphql');
-const GraphQLDate = require('graphql-date');
-const {
+import graphql, {
     GraphQLObjectType,
     GraphQLString,
     GraphQLID
-} = graphql;
+} from 'graphql';
+import GraphQLDate from 'graphql-date';
+
 
 const TaskType = new GraphQLObjectType({
     name: 'UserType',
@@ -17,4 +17,4 @@ const TaskType = new GraphQLObjectType({
     }
 });
 
-module.exports = TaskType;
+export default TaskType;
