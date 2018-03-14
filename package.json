@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack && node build/bundle.js",
-    "test": "mocha --recursive __tests__/",
+    "test": "mocha --compilers js:babel-core/register --recursive __tests__/",
     "build": "webpack"
   },
   "repository": {

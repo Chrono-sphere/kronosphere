@@ -1,10 +1,8 @@
-import graphql from 'graphql';
-
-const {
+import graphql, {
     GraphQLObjectType,
     GraphQLString,
     GraphQLID
-} = graphql;
+} from 'graphql';
 
 const UserType = new GraphQLObjectType({
     name: 'UserType',

@@ -1,11 +1,10 @@
-import graphql from 'graphql';
-import GraphQLDate from 'graphql-date';
-
-const {
+import graphql, {
     GraphQLObjectType,
     GraphQLString,
     GraphQLID
-} = graphql;
+} from 'graphql';
+import GraphQLDate from 'graphql-date';
+
 
 const TaskType = new GraphQLObjectType({
     name: 'UserType',
