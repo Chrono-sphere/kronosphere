@@ -1,7 +1,9 @@
-import graphql, { GraphQLObjectType } from 'graphql';
-import login from './mutations/login';
-import signup from './mutations/signup';
-import logout from './mutations/logout';
+const graphql = require('graphql');
+const login = require('./mutations/login');
+const signup = require('./mutations/signup');
+const logout = require('./mutations/logout');
+
+const { GraphQLObjectType } = graphql;
 
 const mutation = new GraphQLObjectType({
     name: 'Mutation',
@@ -12,4 +14,4 @@ const mutation = new GraphQLObjectType({
     })
 });
 
-export default mutation;
+module.exports = mutation;

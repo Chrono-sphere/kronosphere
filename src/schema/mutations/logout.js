@@ -1,5 +1,5 @@
-import UserType from '../types/user';
-import AuthService from '../../services/auth';
+const UserType = require('../types/user');
+const AuthService = require('../../services/auth');
 
 const logout = {
     type: UserType,
@@ -8,4 +8,4 @@ const logout = {
     }
 };
 
-export default logout;
+module.exports = logout;

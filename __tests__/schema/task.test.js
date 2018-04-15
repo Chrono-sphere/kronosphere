@@ -1,9 +1,10 @@
-import graphql, { GraphQLID, GraphQLString } from 'graphql';
-import GraphQLDate from 'graphql-date';
-import task from '../../src/schema/types/task';
-import chai from 'chai';
-
+const graphql = require('graphql');
+const GraphQLDate = require('graphql-date');
+const { GraphQLID, GraphQLString } = graphql;
+const chai = require('chai');
 const expect = chai.expect;
+
+const task = require('../../src/schema/types/task');
 
 describe('Task schema type', () => {
 

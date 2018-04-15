@@ -1,6 +1,6 @@
-import bcrypt from 'bcrypt-nodejs';
-import crypto from 'crypto';
-import mongoose from 'mongoose';
+const bcrypt = require('bcrypt-nodejs');
+const crypto = require('crypto');
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
