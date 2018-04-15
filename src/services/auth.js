@@ -1,8 +1,7 @@
-import mongoose from 'mongoose';
-import passport from 'passport';
-import passport_local from 'passport-local';
+const mongoose = require('mongoose');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
-const LocalStrategy = passport_local.Strategy;
 const User = mongoose.model('user');
 
 // SerializeUser is used to provide some identifying token that can be saved
@@ -55,7 +54,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
  * @param  {Object} req      [Request object]
  * @return {Promise<User>}   [New user]
  */
-export function signup({ email, password, req }) {
+function signup({ email, password, req }) {
   const user = new User({ email, password });
   if (!email || !password) { throw new Error('You must provide an email and password.'); }
 
@@ -86,7 +85,7 @@ export function signup({ email, password, req }) {
  * @param  {Object} req      [Request object]
  * @return {Promise}
  */
-export function login({ email, password, req }) {
+function login({ email, password, req }) {
   return new Promise((resolve, reject) => {
     passport.authenticate('local', (err, user) => {
       if (!user) { reject('Invalid credentials.') }
@@ -96,9 +95,11 @@ export function login({ email, password, req }) {
   });
 }
 
-export function logout({ req }) {
+function logout({ req }) {
     const { user } = req;
     req.logout();
 
     return user;
 }
+
+module.exports = { signup, login, logout };
