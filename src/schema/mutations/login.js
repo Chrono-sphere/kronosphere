@@ -17,4 +17,4 @@ const login = {
     }
 };
 
-module.exports = login;
+export default login;

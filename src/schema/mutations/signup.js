@@ -17,4 +17,4 @@ const signup = {
     }
 };
 
-module.exports =  signup;
+export default signup;
