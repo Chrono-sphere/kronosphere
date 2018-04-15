@@ -1,10 +1,9 @@
-const graphql = require('graphql');
-const {
+import UserType from '../types/user';
+import { login as AuthServiceLogin } from 'services/auth';
+import graphql, {
     GraphQLObjectType,
     GraphQLString
-} = graphql;
-const UserType = require('../types/user');
-const AuthService = require('../../services/auth');
+} from 'graphql';
 
 const login = {
     type: UserType,
@@ -13,7 +12,7 @@ const login = {
         password: { type: GraphQLString }
     },
     resolve(parentValue, { email, password }, req) {
-        return AuthService.login({ email, password, req });
+        return AuthServiceLogin({ email, password, req });
     }
 };
 

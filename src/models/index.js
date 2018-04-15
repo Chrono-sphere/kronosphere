@@ -1,2 +1,2 @@
-require('./task');
-require('./user');
+import './task';
+import './user';

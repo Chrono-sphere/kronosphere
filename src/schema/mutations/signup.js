@@ -1,10 +1,9 @@
-const graphql = require('graphql');
-const {
+import UserType from '../types/user';
+import AuthService from 'services/auth';
+import graphql, {
     GraphQLObjectType,
     GraphQLString
-} = graphql;
-const UserType = require('../types/user');
-const AuthService = require('../../services/auth');
+} from 'graphql';
 
 const signup = {
     type: UserType,

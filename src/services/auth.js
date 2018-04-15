@@ -102,4 +102,4 @@ function logout({ req }) {
     return user;
 }
 
-module.exports = { signup, login, logout };
+export { signup, login, logout };
