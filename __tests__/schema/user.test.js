@@ -1,9 +1,7 @@
-const graphql = require('graphql');
-const { GraphQLID, GraphQLString } = graphql;
-const chai = require('chai');
-const expect = chai.expect;
+import graphql, { GraphQLID, GraphQLString } from 'graphql';
+import chai, { expect } from 'chai';
 
-const user = require('../../src/schema/types/user');
+import user from '../../src/schema/types/user';
 
 describe('User schema type', () => {
 

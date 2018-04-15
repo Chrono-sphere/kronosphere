@@ -1,11 +1,11 @@
-const UserType = require('../types/user');
-const AuthService = require('../../services/auth');
+import UserType from '../types/user';
+import { logout as AuthServiceLogout } from 'services/auth';
 
 const logout = {
     type: UserType,
     resolve(parentValue, args, req) {
-        return AuthService.logout({ req });
+        return AuthServiceLogout({ req });
     }
 };
 
-module.exports = logout;
+export default logout;

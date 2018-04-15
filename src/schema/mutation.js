@@ -1,11 +1,9 @@
-const graphql = require('graphql');
-const login = require('./mutations/login');
-const signup = require('./mutations/signup');
-const logout = require('./mutations/logout');
+import graphql, { GraphQLObjectType } from 'graphql';
+import login from './mutations/login';
+import signup from './mutations/signup';
+import logout from './mutations/logout';
 
-const { GraphQLObjectType } = graphql;
-
-const mutation = new GraphQLObjectType({
+export default new GraphQLObjectType({
     name: 'Mutation',
     fields: () => ({
         login,
@@ -13,5 +11,3 @@ const mutation = new GraphQLObjectType({
         logout
     })
 });
-
-module.exports = mutation;
