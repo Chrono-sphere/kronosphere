@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
+
 const Task = mongoose.model('task');
 
 /**
  * Creates and saves a task
- * @param {*} props Properties related to task
+ * @param {Object} props Properties related to task
  */
 function createTask(props) {
     const task = new Task(props);
@@ -11,23 +12,24 @@ function createTask(props) {
 }
 
 /**
- * Deletes a task with the specified ID. If the task is not
- * found then it throws an error.
- * @param {*} id ID of the task to delete
+ * Deletes a task with the specified ID.
+ * @param {String} id ID of the task to delete
  */
 function deleteTask(id) {
-    return Task.findOne({ id }).then((task) => {
-        if(task) {
-            return task.delete();
-        }
-        else {
-            throw new Error('Task to delete not found.');
-        }
-    })
+    return Task.findByIdAndRemove(id);
 }
 
-function editTask() {
-    // TODO
+/**
+ * Edits the specified task with the provided properties.
+ * @param {String} id ID of the task
+ * @param {Object} props Properties of the task
+ */
+function editTask(id, props) {
+    return Task.findByIdAndUpdate(
+        id,
+        { $set: props },
+        { new: true }
+    );
 }
 
 export {
