@@ -36,6 +36,8 @@ module.exports = {
         "consistent-return": "off",
         "prefer-promise-reject-errors": "off",
         "arrow-body-style": "off",
-        "import/no-named-as-default-member": "off"
+        "import/no-named-as-default-member": "off",
+        "no-param-reassign": "off",
+        "linebreak-style": "off"
     }
 };

@@ -1,4 +1,4 @@
-import graphql, { GraphQLID, GraphQLString } from 'graphql';
+import graphql, { GraphQLID, GraphQLString, GraphQLNonNull } from 'graphql';
 import GraphQLDate from 'graphql-date';
 import chai, { expect } from 'chai';
 
@@ -8,12 +8,12 @@ describe('Task schema type', () => {
 
     it('should have id of type ID', () => {
         expect(task.getFields()).to.have.property('id');
-        expect(task.getFields().id.type).to.deep.equals(GraphQLID);
+        expect(task.getFields().id.type).to.deep.equals(GraphQLNonNull(GraphQLID));
     });
 
     it('should have title of type String', () => {
         expect(task.getFields()).to.have.property('title');
-        expect(task.getFields().title.type).to.deep.equals(GraphQLString);
+        expect(task.getFields().title.type).to.deep.equals(GraphQLNonNull(GraphQLString));
     });
 
     it('should have description of type String', () => {
@@ -28,6 +28,6 @@ describe('Task schema type', () => {
 
     it('should have creationDate of type String', () => {
         expect(task.getFields()).to.have.property('creationDate');
-        expect(task.getFields().creationDate.type).to.deep.equals(GraphQLDate);
+        expect(task.getFields().creationDate.type).to.deep.equals(GraphQLNonNull(GraphQLDate));
     });
 });
