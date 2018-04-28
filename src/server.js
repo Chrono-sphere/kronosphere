@@ -1,32 +1,40 @@
-import './models';
-
+import 'dotenv/config';
+import connectmongo from 'connect-mongo';
 import express from 'express';
 import expressGraphQL from 'express-graphql';
 import mongoose from 'mongoose';
 import session from 'express-session';
 import passport from 'passport';
-import connectmongo from 'connect-mongo';
+
+import './models';
 import schema from './schema/schema';
 
-const MongoStore = connectmongo(session);
-
-require('dotenv').config();
-
 const app = express();
+const MongoStore = connectmongo(session);
+const {
+    MONGO_USER,
+    MONGO_PASSWORD,
+    MONGO_URL,
+    MONGO_DB_NAME
+} = process.env;
+const MongoUserCredentials = `${MONGO_USER}:${MONGO_PASSWORD}`;
+const MONGO_CONNECTION_URI = `mongodb://${MongoUserCredentials}@${MONGO_URL}/${MONGO_DB_NAME}`;
+
+console.log(MONGO_CONNECTION_URI);
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(MONGO_CONNECTION_URI);
 mongoose.connection
-        .once('open', () => console.log('Connected to MLab instance.'))
-        .on('error', error => console.log('Error connecting to MLab: ', error));
+    .once('open', () => console.log('Connected to MLab instance.'))
+    .on('error', error => console.log('Error connecting to MLab: ', error));
 
 app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET,
     store: new MongoStore({
-        url: process.env.MONGO_URI,
+        url: process.env.MONGODB_URI,
         autoReconnect: true
     })
 }));

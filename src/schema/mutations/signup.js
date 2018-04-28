@@ -1,9 +1,7 @@
+import { GraphQLString } from 'graphql';
+
+import { signup as AuthServiceSignup } from 'services/auth';
 import UserType from '../types/user';
-import AuthService from 'services/auth';
-import graphql, {
-    GraphQLObjectType,
-    GraphQLString
-} from 'graphql';
 
 const signup = {
     type: UserType,
@@ -12,7 +10,7 @@ const signup = {
         password: { type: GraphQLString }
     },
     resolve(parentValue, { email, password }, req) {
-        return AuthService.signup({ email, password, req });
+        return AuthServiceSignup({ email, password, req });
     }
 };
 

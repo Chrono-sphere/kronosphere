@@ -1,9 +1,10 @@
 {
   "name": "timesup",
-  "version": "1.0.0",
+  "version": "0.0.1pre",
   "description": "📆 Task and reminder management",
   "main": "index.js",
   "scripts": {
+    "start": "webpack && node build/bundle.js",
     "dev": "webpack && node build/bundle.js",
     "test": "mocha --compilers js:babel-core/register --recursive __tests__/",
     "build": "webpack"
@@ -43,6 +44,10 @@
   "devDependencies": {
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-plugin-import": "^2.11.0",
     "mocha": "^5.0.1",
     "sinon": "^4.3.0",
     "sinon-chai": "^2.14.0",
