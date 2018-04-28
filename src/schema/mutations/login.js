@@ -1,9 +1,7 @@
-import UserType from '../types/user';
+import { GraphQLString } from 'graphql';
+
 import { login as AuthServiceLogin } from 'services/auth';
-import graphql, {
-    GraphQLObjectType,
-    GraphQLString
-} from 'graphql';
+import UserType from '../types/user';
 
 const login = {
     type: UserType,
