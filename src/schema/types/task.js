@@ -1,5 +1,5 @@
 import GraphQLDate from 'graphql-date';
-import graphql, {
+import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLID,

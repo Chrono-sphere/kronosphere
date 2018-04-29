@@ -1,21 +1,22 @@
 import bcrypt from 'bcrypt-nodejs';
-import crypto from 'crypto';
 import mongoose from 'mongoose';
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-    email: String,
-    password: String
+    firstName: String,
+    lastName: String,
+    email: { type: String, required: [true, 'email is a required field.'] },
+    password: { type: String, required: [true, 'password is a required field.'] }
 });
 
 UserSchema.pre('save', function save(next) {
     const user = this;
-    if(!user.isModified('password')) {
+    if (!user.isModified('password')) {
         return next();
     }
     bcrypt.genSalt(10, (err, salt) => {
-        if(err) {
+        if (err) {
             return next(err);
         }
 
@@ -30,9 +31,9 @@ UserSchema.pre('save', function save(next) {
 });
 
 UserSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-    cb(err, isMatch);
-  });
+    bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+        cb(err, isMatch);
+    });
 };
 
 mongoose.model('user', UserSchema);
