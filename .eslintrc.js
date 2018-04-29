@@ -3,7 +3,8 @@ module.exports = {
     "env": {
         "node": true,
         "browser": true,
-        "es6": true
+        "es6": true,
+        "mocha": true
     },
     "settings": {
         "import/resolver": {
@@ -38,6 +39,7 @@ module.exports = {
         "arrow-body-style": "off",
         "import/no-named-as-default-member": "off",
         "no-param-reassign": "off",
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "padded-blocks": "off"
     }
 };

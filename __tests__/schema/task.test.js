@@ -1,6 +1,6 @@
-import graphql, { GraphQLID, GraphQLString, GraphQLNonNull } from 'graphql';
+import { GraphQLID, GraphQLString, GraphQLNonNull } from 'graphql';
 import GraphQLDate from 'graphql-date';
-import chai, { expect } from 'chai';
+import { expect } from 'chai';
 
 import task from '../../src/schema/types/task';
 
