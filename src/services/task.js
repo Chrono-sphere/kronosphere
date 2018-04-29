@@ -32,8 +32,36 @@ function editTask(id, props) {
     );
 }
 
+/**
+ * Return a task
+ * @param {String} userId Id of the user
+ */
+function getTask(id, req) {
+    return Task.findById(id).then(task => {
+        if (req.user.id === task.userId) {
+            return task;
+        }
+
+        throw new Error('The user does not have access to that task.');
+    });
+}
+
+/**
+ * Returns all the tasks associated with the user.
+ * @param {String} request object
+ */
+function getTasks(req) {
+    if (req.user) {
+        return Task.find({ userId: req.user.id });
+    }
+
+    throw new Error('No user is signed in to retreive tasks.');
+}
+
 export {
     createTask,
     deleteTask,
-    editTask
+    editTask,
+    getTasks,
+    getTask
 };
