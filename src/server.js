@@ -24,6 +24,8 @@ const whitelist = [
     process.env.CLIENT_DOMAIN
 ];
 
+console.log(MONGO_CONNECTION_URI);
+
 // enable cors
 const corsOptions = {
     origin: (origin, callback) => {
@@ -47,7 +49,7 @@ app.use(session({
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET,
     store: new MongoStore({
-        url: process.env.MONGODB_URI,
+        url: MONGO_CONNECTION_URI,
         autoReconnect: true
     })
 }));

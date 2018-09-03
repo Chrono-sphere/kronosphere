@@ -55,7 +55,7 @@ function getTasks(req) {
         return Task.find({ userId: req.user.id });
     }
 
-    throw new Error('No user is signed in to retreive tasks.');
+    throw new Error('No user is signed in to retrieve tasks.');
 }
 
 export {
