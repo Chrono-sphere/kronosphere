@@ -8,7 +8,8 @@ const createTask = {
     args: {
         title: { type: new GraphQLNonNull(GraphQLString) },
         description: { type: GraphQLString },
-        deadline: { type: GraphQLString }
+        deadline: { type: GraphQLString },
+        image: { type: GraphQLString }
     },
     resolve(parentValue, args, req) {
         if (req.user.id) {
