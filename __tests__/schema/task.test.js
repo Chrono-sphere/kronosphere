@@ -16,6 +16,11 @@ describe('Task schema type', () => {
         expect(task.getFields().title.type).to.deep.equals(GraphQLNonNull(GraphQLString));
     });
 
+    it('should have image of type String', () => {
+        expect(task.getFields()).to.have.property('image');
+        expect(task.getFields().image.type).to.deep.equals(GraphQLString);
+    });
+
     it('should have description of type String', () => {
         expect(task.getFields()).to.have.property('description');
         expect(task.getFields().description.type).to.deep.equals(GraphQLString);

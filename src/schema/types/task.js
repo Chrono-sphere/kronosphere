@@ -11,6 +11,7 @@ const TaskType = new GraphQLObjectType({
     fields: {
         id: { type: new GraphQLNonNull(GraphQLID) },
         userId: { type: new GraphQLNonNull(GraphQLID) },
+        image: { type: GraphQLString },
         title: { type: new GraphQLNonNull(GraphQLString) },
         description: { type: GraphQLString },
         deadline: { type: GraphQLDate },
