@@ -21,6 +21,7 @@ const {
 const MongoUserCredentials = `${MONGO_USER}:${MONGO_PASSWORD}`;
 const MONGO_CONNECTION_URI = `mongodb://${MongoUserCredentials}@${MONGO_URL}/${MONGO_DB_NAME}`;
 const whitelist = [
+    process.env.LOCAL_CLIENT_DOMAIN,
     process.env.CLIENT_DOMAIN
 ];
 
